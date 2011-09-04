@@ -36,6 +36,8 @@ class SimpleSplitLine(object):
         # first level
         if len(out) > 2:
             print(str(out[0]) + " = " + str(out[1]) + " + " + str(out[2]))
+            
+        # test small change
         
 simple = SimpleSplitLine()
 simple.printSplitLine(7)
