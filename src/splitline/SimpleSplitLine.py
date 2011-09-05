@@ -8,7 +8,8 @@ from collections import deque
 
 class SimpleSplitLine(object):
     '''
-    classdocs
+    SimpleSplitLine provides an implementation which prints out each iteration 
+    of the shortest splitline algorithm
     '''
 
     def __init__(self):
@@ -31,13 +32,32 @@ class SimpleSplitLine(object):
                 working.append(a)
                 working.append(b)
         
+        # print out BFS results
         print(out)
         
-        # first level
+        # print out each level of the tree
         if len(out) > 2:
-            print(str(out[0]) + " = " + str(out[1]) + " + " + str(out[2]))
+            print("%s = %s + %s" % (out[0], out[1], out[2]))
             
-        # test small change
+            log = math.log(len(out), 2)
+            steps = math.floor(log)
+            
+            step = 0
+            i = 1
+            j = 3
+            power = 1
+            
+            while (step < steps):
+                right = " ".join(["%s" % o for o in out[i:j]])
+                print(str(out[0]) + " = " + right)
+                step += 1
+                power += 1
+                i = j
+                j = min(j + int(math.pow(2, power)), len(out))
+                pass
+            
+        # TODO format the results so it looks like
+        # 7 = (2 + 2) + (2 + 1)
         
 simple = SimpleSplitLine()
 simple.printSplitLine(7)
