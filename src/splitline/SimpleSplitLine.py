@@ -51,8 +51,8 @@ class SimpleSplitLine(object):
                 i = j
                 j = j + int(math.pow(2, power))
                 
-                print("i=%s, j=%s" % (i, j))
-                print(out[i:j])
+                #print("i=%s, j=%s" % (i, j))
+                #print(out[i:j])
                 
                 right = " ".join(["%s" % o for o in out[i:j]])
                 
