@@ -36,29 +36,34 @@ class SimpleSplitLine(object):
         print(out)
         
         # print out each level of the tree
+        leno = len(out)
         if len(out) > 2:
-            print("%s = %s + %s" % (out[0], out[1], out[2]))
-            
-            log = math.log(len(out), 2)
+            log = math.log(leno, 2)
             steps = math.floor(log)
             
             step = 0
-            i = 1
-            j = 3
-            power = 1
+            i = 0
+            j = 1
+            power = 0
             
             while (step < steps):
-                right = " ".join(["%s" % o for o in out[i:j]])
-                print(str(out[0]) + " = " + right)
-                step += 1
                 power += 1
                 i = j
-                j = min(j + int(math.pow(2, power)), len(out))
+                j = j + int(math.pow(2, power))
+                
+                print("i=%s, j=%s" % (i, j))
+                print(out[i:j])
+                
+                right = " ".join(["%s" % o for o in out[i:j]])
+                
+                print(str(n) + " = " + right)
+                
+                step += 1
                 pass
             
         # TODO format the results so it looks like
         # 7 = (2 + 2) + (2 + 1)
         
 simple = SimpleSplitLine()
-simple.printSplitLine(7)
+simple.printSplitLine(9)
         
