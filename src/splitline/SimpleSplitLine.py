@@ -56,6 +56,11 @@ class SimpleSplitLine(object):
                 
                 right = " ".join(["%s" % o for o in out[i:j]])
                 
+                sumo = sum(out[i:j])
+                if sumo < n:
+                    for x in range(sumo, n):
+                        right += " 1"
+                    
                 print(str(n) + " = " + right)
                 
                 step += 1
