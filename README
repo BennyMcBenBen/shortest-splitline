@@ -1,9 +1,7 @@
-Shortest-Splitline is a Python implementation of the shortest splitline 
+shortest-splitline is a Python implementation of the shortest splitline 
 algorithm, which can be used for drawing voting districts.
 
-First, I am attempting a 1-D implementation, to be followed by a 2-D 
-implementation, and one day maybe a 3-D implementation just to see how the
-algorithm scales.
+This project is in progress. Currently, I am working on code which downloads 2010 United States census files for states and processes them into one CSV file per state.
 
 This project is inspired by the following articles:
 http://blog.cgpgrey.com/gerrymandering-explained/
