@@ -1,7 +1,7 @@
 '''
 prepare.py provides utilities for downloading and processing state census files.
 
-@author: Ben
+@author: Ben Zoller
 '''
 import csv
 import os
