@@ -2,4 +2,5 @@
 .pydevproject
 resources
 *~
+__pycache__
 

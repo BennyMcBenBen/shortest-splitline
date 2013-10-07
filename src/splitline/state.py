@@ -5,4 +5,4 @@ class State(object):
         self.abbrev = abbrev
 
     def __repr__(self):
-    	return "{}={}".format(self.abbrev, self.name)
+    	return "State(abbrev={},name={})".format(self.abbrev, self.name)
