@@ -1,5 +1,6 @@
 '''
-StateCsvParser reads in the state CSV files into dictionaries.
+state_cvs_parser.py reads in the state CSV files into dictionaries.
+
 @author Ben Zoller
 '''
 
@@ -37,11 +38,12 @@ def get_total_num_districts(state_districts):
 		total += state_district.districts
 	return total
 
+if __name__ == "__main__":
+	states = read_states_csv()
+	districts_2000 = read_state_districts_csv(states, 2000)
+	districts_2010 = read_state_districts_csv(states, 2010)
 
-states = read_states_csv()
-state_districts_2000 = read_state_districts_csv(states, 2000)
-state_districts_2010 = read_state_districts_csv(states, 2010)
-
-total_districts_2000 = get_total_num_districts(state_districts_2000)
-total_districts_2010 = get_total_num_districts(state_districts_2010)
-print("2000={}; 2010={}".format(total_districts_2000, total_districts_2010))
+	total_districts_2000 = get_total_num_districts(districts_2000)
+	total_districts_2010 = get_total_num_districts(districts_2010)
+	print("2000={}; 2010={}".format(total_districts_2000, 
+		total_districts_2010))

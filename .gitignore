@@ -1,6 +1,6 @@
 .project
 .pydevproject
-resources
+temp
 *~
 __pycache__
 
