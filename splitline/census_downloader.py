@@ -121,9 +121,9 @@ def prepare_state(state):
     write_csv(download_dir, state)
 
 def prepare_states():
-  states = init_states()
-  for abbr, name in sorted(states.iteritems()):
-    prepare_state(abbr, name)
+  states = state_csv_parser.read_states_csv()
+  for state in states.values():
+    prepare_state(state)
 
 download_dir_root = "temp/"
 
@@ -131,6 +131,10 @@ if __name__ == "__main__":
   states = state_csv_parser.read_states_csv()
   state_districts = state_csv_parser.read_state_districts_csv(states, 2010)
 
+  al = states['AL']
   md = states['MD']
 
+  prepare_state(al)
   prepare_state(md)
+  # TODO abstract away the year
+  # TODO download the files under directory temp/YEAR/STATE/.
