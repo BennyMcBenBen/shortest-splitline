@@ -32,11 +32,12 @@ def read_state_districts_csv(states, year):
 	file.close()
 	return state_districts
 
+
 def get_total_num_districts(state_districts):
 	total = 0
 	for state_district in state_districts.values():
 		total += state_district.districts
-	return total
+	return total	
 
 if __name__ == "__main__":
 	states = read_states_csv()
